@@ -1,0 +1,6 @@
+/home/steffen/Documents/Uni/sem6/BA/rulewerk/rulewerk-clingo/src/main/java/org/semanticweb/rulewerk/reasoner/clingo/ClingoKnowledgeBase.java
+/home/steffen/Documents/Uni/sem6/BA/rulewerk/rulewerk-clingo/src/main/java/org/semanticweb/rulewerk/reasoner/clingo/Skolemizer.java
+/home/steffen/Documents/Uni/sem6/BA/rulewerk/rulewerk-clingo/src/main/java/org/semanticweb/rulewerk/reasoner/clingo/ModelToClingoConverter.java
+/home/steffen/Documents/Uni/sem6/BA/rulewerk/rulewerk-clingo/src/main/java/org/semanticweb/rulewerk/reasoner/clingo/ClingoQueryResultIterator.java
+/home/steffen/Documents/Uni/sem6/BA/rulewerk/rulewerk-clingo/src/main/java/org/semanticweb/rulewerk/reasoner/clingo/ClingoReasoner.java
+/home/steffen/Documents/Uni/sem6/BA/rulewerk/rulewerk-clingo/src/main/java/org/semanticweb/rulewerk/reasoner/clingo/ClingoToModelConverter.java
