@@ -1,0 +1,4 @@
+/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/CMakeFiles/rebuild_cache.dir
+/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/CMakeFiles/clingo-java.dir
+/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/CMakeFiles/jClingo.dir
+/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/CMakeFiles/edit_cache.dir

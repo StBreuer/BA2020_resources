@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="clingo-in-rulewerk"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\anaconda3\;CMake Files\..\..\..\..\..\..\anaconda3\lib\;CMake Files\..\..\..\..\..\..\anaconda3\lib\cmake\;CMake Files\..\..\..\..\..\..\anaconda3\lib\cmake\Clingo\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clingo-java">
+				<Option output="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/libclingo-java.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/jvm/default-java/include"/>
+					<Add directory="/usr/lib/jvm/default-java/include/linux"/>
+					<Add directory="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/include"/>
+					<Add directory="/home/steffen/anaconda3/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clingo-java"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clingo-java/fast">
+				<Option output="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/libclingo-java.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/jvm/default-java/include"/>
+					<Add directory="/usr/lib/jvm/default-java/include/linux"/>
+					<Add directory="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/include"/>
+					<Add directory="/home/steffen/anaconda3/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clingo-java/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jClingo">
+				<Option working_dir="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 jClingo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/ControlClingo.cpp">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/ControlClingo.h">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/QueryTermIterator.cpp">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/QueryTermIterator.h">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/RawTermIterator.cpp">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/RawTermIterator.h">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/rulewerk_clingo_Clingo.cpp">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/rulewerk_clingo_Clingo.h">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/rulewerk_clingo_TermQueryResultIterator.cpp">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/src/clingo/java/native/rulewerk_clingo_TermQueryResultIterator.h">
+			<Option target="clingo-java"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/../../../../../../anaconda3/lib/cmake/Clingo/ClingoConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\anaconda3\lib\cmake\Clingo\"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/../../../../../../anaconda3/lib/cmake/Clingo/ClingoConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\anaconda3\lib\cmake\Clingo\"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/../../../../../../anaconda3/lib/cmake/Clingo/ClingoTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\anaconda3\lib\cmake\Clingo\"/>
+		</Unit>
+		<Unit filename="/home/steffen/Documents/Uni/sem6/BA/BA2020_KBS/JavainCmake/../../../../../../anaconda3/lib/cmake/Clingo/ClingoTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\anaconda3\lib\cmake\Clingo\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

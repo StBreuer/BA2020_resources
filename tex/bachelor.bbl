@@ -1,0 +1,80 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{MPSP{\etalchar{+}}12}
+
+\bibitem[Bre19]{B2020}
+Steffen Breuer.
+\newblock Ba2020resources.
+\newblock \\\url{https://github.com/StBreuer/BA2020_resources}, 2019.
+
+\bibitem[CDG{\etalchar{+}}19]{CDGJKU2019}
+David Carral, Irina Dragoste, Larry Gonz{\'{a}}lez, Ceriel Jacobs, Markus
+  Kr{\"{o}}tzsch, and Jacopo Urbani.
+\newblock Vlog: A rule engine for knowledge graphs.
+\newblock In Chiara Ghidini, Olaf Hartig, Maria Maleshkova, Vojt{\v{e}}ch
+  Sv{\'{a}}tek, Isabel~F. Cruz, Aidan Hogan, Jie Song, Maxime Lefran{\c{c}}ois,
+  and Fabien Gandon, editors, {\em Proceedings of the 18th International
+  Semantic Web Conference (ISWC'19) Part {II}}, volume 11779 of {\em LNCS}.
+  Springer, October 2019.
+
+\bibitem[Gag19]{G2019}
+Sarah~Alice Gaggl.
+\newblock Asp 1.
+\newblock
+  \\\url{https://iccl.inf.tu-dresden.de/w/images/b/b8/PSSAI2019_L6.pdf}, 2019.
+
+\bibitem[GKKS14]{DBLP:journals/corr/GebserKKS14}
+Martin Gebser, Roland Kaminski, Benjamin Kaufmann, and Torsten Schaub.
+\newblock Clingo = {ASP} + control: Preliminary report.
+\newblock {\em CoRR}, abs/1405.3694, 2014.
+
+\bibitem[GPH05]{article}
+Yuanbo Guo, Zhengxiang Pan, and Jeff Heflin.
+\newblock Lubm: a benchmark for owl knowledge base systems.
+\newblock {\em Web Semantics: Science, Services and Agents on the World Wide
+  Web}, 3:158--182, 10 2005.
+
+\bibitem[Kr{\"{o}}18]{K2018}
+Markus Kr{\"{o}}tzsch.
+\newblock The chase.
+\newblock
+  \\\url{https://iccl.inf.tu-dresden.de/w/images/c/cc/DBT2018-Lecture-19-overlay.pdf},
+  2018.
+
+\bibitem[Kr{\"{o}}19]{K2019}
+Markus Kr{\"{o}}tzsch.
+\newblock Rules for querying graphs.
+\newblock \\\url{https://github.com/knowsys/rulewerk/wiki/Rule-syntax-grammar},
+  2019.
+
+\bibitem[KSW{\etalchar{+}}19]{KSWRB2014}
+Roland Kaminski, Torsten Schaub, Philipp Wanko, Javier Romero, and bartbog.
+\newblock Potassco guide version 2.2.0.
+\newblock \\\url{https://github.com/potassco/guide/releases/tag/v2.2.0}, 2019.
+
+\bibitem[MG20]{MG2020}
+Maximilian Marx and Larry Gonz{\'{a}}lez.
+\newblock Rule syntax grammar.
+\newblock \\\url{https://github.com/knowsys/rulewerk/wiki/Rule-syntax-grammar},
+  2020.
+
+\bibitem[MPSP{\etalchar{+}}12]{MPSPBFHHIRSS2012}
+Boris Motik, Peter~F. Patel-Schneider, Bijan Parsia, Conrad Bock, Achille
+  Fokoue, Peter Haase, Rinke Hoekstra, Ian Horrocks, Alan Ruttenberg, Uli
+  Sattler, and Michael Smith.
+\newblock Owl 2 web ontology language structural specification and
+  functional-style syntax (second edition).
+\newblock
+  \\\url{https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI},
+  2012.
+
+\bibitem[PCBBL14]{PCBT2014}
+Eric Prud'hommeaux, Gavin Carothers, David Beckett, and Tim Berners-Lee.
+\newblock Rdf 1.1 turtle.
+\newblock \\\url{https://www.w3.org/TR/turtle/}, 2014.
+
+\bibitem[PS08]{PS2008}
+Eric Prud'hommeaux and Andy Seaborne.
+\newblock Sparql query language for rdf.
+\newblock \\\url{https://www.w3.org/TR/rdf-sparql-query/}, 2008.
+
+\end{thebibliography}
