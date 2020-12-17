@@ -1,0 +1,6 @@
+# Hashes of file build rules.
+9b2f7589df99eda2dbf6ddd79d828fbc CMakeFiles/jClingo
+7a3e7cb53a57330a3a404d50c806782a CMakeFiles/jClingo.dir/java_class_filelist
+940e7def23b4972ee30b60a045f5f519 CMakeFiles/jClingo.dir/java_compiled_jClingo
+71999a1e39f8d8e70ca7ceb63d723a91 CMakeFiles/jClingo.dir/resources/libclingo-java.so
+fc9176c4ecbab04a576fabf108fa8d22 jClingo.jar

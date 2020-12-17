@@ -1,0 +1,4 @@
+/home/steffen/Documents/Uni/sem6/BA/pushWontWork/BA2020_resources/ClingoInterface/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/steffen/Documents/Uni/sem6/BA/pushWontWork/BA2020_resources/ClingoInterface/cmake-build-debug/CMakeFiles/clingo-java.dir
+/home/steffen/Documents/Uni/sem6/BA/pushWontWork/BA2020_resources/ClingoInterface/cmake-build-debug/CMakeFiles/jClingo.dir
+/home/steffen/Documents/Uni/sem6/BA/pushWontWork/BA2020_resources/ClingoInterface/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Integration}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{General Workflow}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Interaction with Clingo}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{From Java to C++}{13}{0}{2}
+\beamer@subsectionintoc {2}{4}{Usage within Rulewerk}{14}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{1}{Translation}{15}{0}{2}
+\beamer@sectionintoc {3}{Evaluation}{19}{0}{3}

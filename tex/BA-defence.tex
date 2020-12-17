@@ -1,0 +1,460 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usetheme{tud}
+\usefonttheme{tud}
+\usepackage{tikz}
+\usetikzlibrary{automata}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\usepackage{tikz-uml}
+\usepackage{scalefnt}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{csquotes}
+
+\title{Integration and Evaluation of an ASP-Solver as an Alternative
+Reasoning Backend in the Rulewerk Toolkit}
+\author{Steffen Breuer}
+\institute[Knowledge Based Systems]{TU Dresden}
+
+
+
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{frame}
+%\frametitle{Content}
+%\tableofcontents
+%\end{frame}
+
+\section{Introduction}
+\subsection{Introduction}
+\begin{frame}
+\frametitle{Introduction}
+\begin{itemize}
+\item What is Rulewerk?
+\item What is the current backend?
+\item Why an alternative reasoning backend?
+\item What different backend was choosen?
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rulewerk}
+\begin{itemize}
+\item Java API
+\item Knowledge modelling, data integration, and declarative computing
+\item \textbf{VLog}
+\begin{itemize}
+\item Datalog with existential rules and stratified negation
+\item C++
+\end{itemize}
+\item CSV, DLGP format (Graal), define in Java, OWL ontologies, RDF, SPARQL query language
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Clingo}
+\begin{itemize}
+\item Answer Set Programming (ASP) system
+\item gringo, clasp
+\item C++, C, Python
+\end{itemize}
+
+\end{frame}
+
+\section{Integration}
+\subsection{General Workflow}
+
+\begin{frame}
+\frametitle{Gerneral Workflow}
+
+\begin{tikzpicture}
+\begin{umlseqdiag}
+\umlobject [x=0] {Rulewerk}
+\umlobject [x=2.5] {JNI-Java}
+\umlobject [x=5] {JNI-C++}
+\umlobject [x=7.5] {Control}
+\umlobject [x=10]{Clingo}
+
+\begin{umlcall}[op={translateData}]{Rulewerk}{Rulewerk}
+\end{umlcall}
+\begin{umlcall}[op={addData}]{Rulewerk}{JNI-Java}
+\begin{umlcall}[op={addData}]{JNI-Java}{JNI-C++}
+\begin{umlcall}[op={addData}]{JNI-C++}{Control}
+\begin{umlcall}[op={addData}]{Control}{Clingo}
+\end{umlcall}
+\end{umlcall}
+\end{umlcall}
+\end{umlcall}
+
+\end{umlseqdiag}
+
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Gerneral Workflow}
+
+\begin{tikzpicture}
+\begin{umlseqdiag}
+\umlobject [x=0] {Rulewerk}
+\umlobject [x=2.5] {JNI-Java}
+\umlobject [x=5] {JNI-C++}
+\umlobject [x=7.5] {Control}
+\umlobject [x=10]{Clingo}
+\begin{umlcall}[op={reason}]{Rulewerk}{JNI-Java}
+\begin{umlcall}[op={reason}]{JNI-Java}{JNI-C++}
+\begin{umlcall}[op={reason}]{JNI-C++}{Control}
+\begin{umlcall}[op={reason}]{Control}{Clingo}
+\end{umlcall}
+\end{umlcall}
+\end{umlcall}
+\end{umlcall}
+
+\end{umlseqdiag}
+
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Gerneral Workflow}
+{\scalefont{0.85}
+\begin{tikzpicture}
+\begin{umlseqdiag}
+\umlobject [x=0] {Rulewerk}
+\umlobject [x=2.5] {JNI-Java}
+\umlobject [x=5] {JNI-C++}
+\umlobject [x=7.5] {Control}
+\umlobject [x=10]{Clingo}
+
+\begin{umlcall}[op={translateQuery}]{Rulewerk}{Rulewerk}
+\end{umlcall}
+
+\begin{umlcall}[op={query}, return=terms]{Rulewerk}{JNI-Java}
+\begin{umlcall}[op={query}, return=terms]{JNI-Java}{JNI-C++}
+\begin{umlcall}[op={query}, return=terms]{JNI-C++}{Control}
+\begin{umlcall}[op={query}, return=terms]{Control}{Clingo}
+\end{umlcall}
+\end{umlcall}
+\end{umlcall}
+\end{umlcall}
+
+\begin{umlcall}[op={makeFact}]{Rulewerk}{Rulewerk}
+\end{umlcall}
+\end{umlseqdiag}
+
+\end{tikzpicture}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{General Workflow}
+
+\begin{tikzpicture}
+\begin{umlseqdiag}
+\umlobject[x=0] {Rulewerk}
+\umlobject[x=10] {VLog}
+
+\begin{umlcall}[op={loadInMemoryDatasource}]{Rulewerk}{VLog}
+\end{umlcall}
+
+\begin{umlcall}[op={query}, return=facts]{Rulewerk}{VLog}
+\end{umlcall}
+
+\begin{umlcall}[op={safeFactsToKB}]{Rulewerk}{Rulewerk}
+\end{umlcall}
+\end{umlseqdiag}
+
+\end{tikzpicture}
+
+\end{frame}
+
+\subsection{Interaction with Clingo}
+\begin{frame}
+\frametitle{Interacting with Clingo}
+\begin{itemize}
+\item How to add data?
+\item How to reason?
+\item How to get data out of Clingo?
+\item Why abstract the control of Clingo?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Add Data}
+ControlClingo
+\begin{itemize}
+\item Rules and facts (statements)
+\item Parse into Clingo syntax myself
+\begin{itemize}
+\item only addable after grounding
+\end{itemize}
+\item Add statements as strings
+\item Configurations % cause for abstraction
+\begin{itemize} 
+\item setting a part
+\item setting parameters
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Reason over a Knowledge Base}
+ControlClingo
+\begin{itemize}
+\item ground
+\begin{itemize}
+\item set part
+\item set params
+\end{itemize}
+\item solve
+\begin{itemize}
+\item add additional facts
+\item save model as SymbolSpan (Vector)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Get a model out of Clingo}
+QueryTermIterator
+\begin{itemize}
+\item Returns the terms of a specific predicate/query
+\item First filtering SymbolSpan
+\item Filters SymbolSpan on the fly
+\end{itemize}
+
+\end{frame}
+
+\subsection{From Java to C++}
+\begin{frame}
+\frametitle{From Java to C++}
+Java Native Interface
+\begin{itemize}
+\item Native methods
+\item Conversion of objects
+\end{itemize}
+\end{frame}
+
+\subsection{Usage within Rulewerk}
+\begin{frame}
+\frametitle{Usage within Rulewerk}
+\begin{itemize}
+\item Translate Rulewerks syntax into Clingos syntax
+\item Make Clingos functions accessible
+\begin{itemize}
+\item ClingoReasoner
+\end{itemize}
+\item load CSV files
+\begin{itemize}
+\item CSVloader
+\end{itemize}
+\item Query a resulting model
+\begin{itemize}
+\item ClingoQueryResultIterator
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsubsection{Translation}
+\begin{frame}
+\frametitle{Rulewerk vs Clingo syntax}
+\begin{itemize}
+\item Both use rules and facts
+\item Both support negation
+\item Clingo does not support existential rules
+\item Rulewerk uses \enquote{?} / \enquote{!} in front of variables
+\item Rulewerk allows variables starting with a lower case letter
+\item Clingo does not support IRIs
+
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Translation: IRIs and Variables}
+\begin{itemize}
+\item IRIs
+\begin{itemize}
+\item Introduce aliases
+\item Needs inner state
+\end{itemize}
+\item Variables
+\begin{itemize}
+\item make sure variables are in upper case
+\item remove \enquote{?}/\enquote{!}
+\end{itemize}
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Translation: Existential Rules}
+\begin{itemize}
+\item Skolemization
+\end{itemize}
+$ h(!X) \vdash b_1(?Y),b_2(?Z). \rightarrow h(f_1(Y,Z)) \vdash b_1(Y),b_2(Z).$
+\begin{itemize}
+\item Needs inner state
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Translation: Implementation}
+\begin{tikzpicture}
+\begin{umlpackage}{Translation}
+
+\umlclass[x=0,y=3.5]{ClingoReasoner}{}{}
+\umlclass[x=0,y=0]{AliasHandler}{}{}
+\umlclass[x=3,y=0]{Skolemizer}{}{}
+\umlclass[x=7,y=2]{ClingoToModelConverter}{}{}
+\umlclass[x=7,y=3.5]{ModelToClingoConverter}{}{}
+\umluniaggreg[mult2=1]{AliasHandler}{ClingoReasoner}
+\umluniaggreg[mult2=1]{Skolemizer}{ClingoReasoner}
+\end{umlpackage}
+\end{tikzpicture}
+\end{frame}
+
+\section{Evaluation}
+\begin{frame}
+\frametitle{Setup}
+\begin{itemize}
+\item Lenovo ideapad 520S, 8 GB of RAM, Intel Core i5-72000U 
+\item Dataset: Lehigh University Benchmark (LUBM)
+\item OWL lite
+\end{itemize}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\# Rules & \# Datalog rules & \# Existential Rules \\
+\hline
+\hline
+96 & 88 & 8 \\
+\hline
+\end{tabular}
+\caption{TBox specs}
+%\lable{tab:my_lable}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+ABox & Classes & Properties & facts \\
+\hline
+\hline
+1 & 14 & 12 & 2283599 \\
+2 & 14 & 12 & 4549977 \\
+\hline
+\end{tabular}
+\caption{ABox specs}
+%\lable{tab:my_lable}
+\end{table}
+
+\end{frame}
+
+
+%\pgfplotstableread[row sep=\\,col sep=&]{
+%    interval & carT & carD & carR \\
+%   whole run     & 1.2  & 0.1  & 0.2  \\
+%   loading from File  & 12.8 & 3.8  & 4.9  \\
+%   loading into Clingo    & 15.5 & 10.4 & 13.4 \\
+%   solving   & 14.0 & 17.3 & 22.2 \\
+%    }\mydata
+    
+%\begin{frame}
+%\frametitle{Results}
+%\begin{tikzpicture}
+%\begin{axis}[ybar,
+%			symbolic x coords={whole run,loading from File,loading into Clingo, solving},
+%			xtick=data,
+%			]
+%			\addplot table[x=interval,y=carT]{\mydata};
+%			\end{axis}
+
+%\end{tikzpicture}
+%\end{frame}
+
+\begin{frame}
+\frametitle{Results}
+{\scalefont{0.75}
+\begin{table}
+\center
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Setup & whole run & loading from File & loading into backend & solving & querying \\
+\hline
+\hline
+Clingo & 87.892 & 16.201 & 25.708 & 23.490 & 22.469 \\
+VLog 1 & 30.942 & 15.324 & 8.388 & 1.301 & 5.516 \\
+VLog 2 & 12.810 &        & 6.737 & 1.063 & 4.801 \\
+\hline
+
+\end{tabular}
+\caption{times in seconds for dataset 1}
+\end{table}
+}
+
+{\scalefont{0.75}
+\begin{table}
+\center
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Setup & whole run & loading from File & loading into backend & solving & querying \\
+\hline
+\hline
+Clingo & 194.966 & 29.561 & 61.256 & 55.392 & 47.410 \\
+VLog 1 & 106.950 & 31.156 & 58.021 & 2.945 & 14.386 \\
+VLog 2 & 25.606  &        & 12.800 & 2.102 & 10.238 \\
+\hline
+
+\end{tabular}
+\caption{times in seconds for dataset 2}
+\end{table}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusion}
+\begin{itemize}
+\item It is possible to integrate Clingo
+\item Skolemization needed to express existential rules
+\item IRIS need to be replaced
+\item CSV files need to be passed through VLog
+\item Clingo is slow
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Improvements}
+\begin{itemize}
+\item Improve skolemization by adding a function to access existential/datalog variables for predicates
+\item Load CSV files direktly into Rulewerk
+\item use the C API of Clingo
+\end{itemize}
+\end{frame}
+%\begin{frame}
+%\frametitle{Sources}
+%\url{https://iccl.inf.tu-dresden.de/web/Rules_Tutorial_2020}
+
+%\end{frame}
+
+
+\end{document}
